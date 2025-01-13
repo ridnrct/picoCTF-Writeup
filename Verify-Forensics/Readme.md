@@ -1,6 +1,6 @@
 # Verify picoCTF Write-Up
 
-### Menganalisis File checksum.txt
+### 1. Menganalisis File yang Diberikan
 
 - **`checksum.txt`** berisi hash:
 
@@ -30,7 +30,7 @@
 
   Skrip ini menggunakan OpenSSL untuk mendekripsi file yang dienkripsi dengan algoritma AES-256-CBC. Kata sandinya adalah `picoCTF`.
 
-### Mengidentifikasi File /files
+### 2. Mengidentifikasi File yang Tepat
 
 Hash yang terdapat dalam `checksum.txt` adalah SHA-256 dari salah satu file dalam direktori `files/`.
 Untuk menemukan file yang cocok, menghitung hash SHA-256 dari setiap file di direktori tersebut:
@@ -45,7 +45,7 @@ Hasilnya menunjukkan file yang cocok:
 3ad37ed6c5ab81d31e4c94ae611e0adf2e9e3e6bee55804ebc7f386283e366a4  files/e018b574
 ```
 
-### 3. Mendekripsi File
+### 3. Dekripsi File
 
 Dekripsi file yang ditemukan menggunakan skrip `decrypt.sh` yang sudah diberikan:
 

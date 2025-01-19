@@ -53,7 +53,7 @@ Dekripsi file yang ditemukan menggunakan skrip `decrypt.sh` yang sudah diberikan
 ./decrypt.sh files/e018b574
 ```
 
-Hasilnya adalah:
+## Flag
 
 ```
 picoCTF{trust_but_verify_e018b574}

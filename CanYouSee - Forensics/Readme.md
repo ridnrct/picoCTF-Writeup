@@ -1,31 +1,31 @@
 # Commitment Issues picoCTF Write-Up
 
-### 1. Unduh File
-File yang diperlukan untuk tantangan ini dapat diunduh dengan perintah berikut:
+### 1. Download File
+The file needed for this challenge can be downloaded with the following command:
 ```bash
 wget https://artifacts.picoctf.net/c_titan/4/unknown.zip
 ```
 
-### 2. Ekstrak File ZIP
-Setelah diunduh, ekstrak isi file ZIP menggunakan:
+### 2. Extract ZIP File
+After downloading, extract the contents of the ZIP file using:
 ```bash
 unzip unknown.zip
 ```
 
-### 3. Gunakan ExifTool untuk Membaca Metadata
-Di dalam file yang diekstrak, gunakan **ExifTool** untuk memeriksa metadata dari gambar yang diberikan:
+### 3. Use ExifTool to Read Metadata
+Inside the extracted file, use **ExifTool** to examine the metadata of the given image:
 ```bash
 exiftool ukn_reality.jpg
 ```
 
-### 4. Identifikasi String Tersembunyi
-Saat memeriksa metadata, ditemukan sebuah string pada bidang `Attribution URL`:
+### 4. Identify Hidden String
+While examining the metadata, a string was found in the `Attribution URL` field:
 ```
 attribution URL: cGljb0NURntNRTc0RDQ3QV9ISUREM05fZGVjYTA2ZmJ9Cg==
 ```
 
-### 5. Decode String Base64
-Decode string tersebut menggunakan perintah berikut:
+### 5. Decode Base64 String
+Decode the string using the following command:
 ```bash
 echo "cGljb0NURntNRTc0RDQ3QV9ISUREM05fZGVjYTA2ZmJ9Cg==" | base64 --decode
 ```

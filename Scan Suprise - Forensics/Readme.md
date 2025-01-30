@@ -1,28 +1,28 @@
-# Scan Suprise picoCTF Write-Up
+# Scan Surprise picoCTF Write-Up
 
-### Deskripsi Tantangan
-Tantangan ini meminta untuk memindai QR Code dari sebuah gambar di dalam server yang diakses melalui SSH.
+### Challenge Description
+This challenge asks to scan a QR Code from an image on a server accessed via SSH.
 
-### Langkah Penyelesaian
+### Steps to Solve
 
-1. **Akses Server Melalui SSH**
-   Gunakan perintah berikut untuk masuk ke server:
+1. **Access the Server via SSH**
+   Use the following command to log into the server:
    ```bash
    ssh -p 60779 ctf-player@atlas.picoctf.net
    ```
-   Masukkan kata sandi yang diberikan:
+   Enter the provided password:
    ```
    1ad5be0d
    ```
 
-2. **Pindai QR Code**
-   Gunakan perintah berikut untuk memindai QR Code pada file `flag.png`:
+2. **Scan the QR Code**
+   Use the following command to scan the QR Code on the `flag.png` file:
    ```bash
    zbarimg flag.png
    ```
 
-3. **Hasil Pemindaian**
-   Output dari perintah di atas adalah sebagai berikut:
+3. **Scan Results**
+   The output of the above command is as follows:
    ```
    Connection Error (Failed to connect to socket /var/run/dbus/system_bus_socket: No such file or directory)
    Connection Null

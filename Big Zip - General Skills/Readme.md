@@ -1,28 +1,28 @@
 # Big Zip picoCTF Write-Up
 
-## Deskripsi Tantangan
-Tantangan ini melibatkan mencari sebuah flag dalam kumpulan file yang besar. Untuk menyelesaikan tantangan, kita akan menggunakan perintah command-line seperti `wget`, `unzip`, dan `grep` untuk menemukan flag yang tersembunyi.
+## Challenge Description
+This challenge involves finding a flag within a large collection of files. To solve the challenge, we will use command-line tools such as `wget`, `unzip`, and `grep` to locate the hidden flag.
+   
+## Solution Steps
 
-## Langkah Penyelesaian
-
-1. **Unduh File ZIP**
-   Unduh arsip ZIP yang berisi file dengan menggunakan perintah berikut:
+1. **Download the ZIP File**  
+   Download the ZIP archive containing the files using the following command:
    ```bash
    wget https://artifacts.picoctf.net/c/504/big-zip-files.zip
    ```
 
-2. **Ekstrak File ZIP**
-   Ekstrak file ZIP yang telah diunduh menggunakan perintah:
+2. **Extract the ZIP File**  
+   Extract the downloaded ZIP file using the command:
    ```bash
    unzip big-zip-files.zip
    ```
 
-3. **Cari Flag dengan Grep**
-   Gunakan perintah `grep` untuk mencari pola yang mengandung "pico" di dalam file yang telah diekstrak:
+3. **Search for the Flag Using Grep**  
+   Use the `grep` command to search for the pattern containing "pico" within the extracted files:
    ```bash
    grep -r pico big-zip-files/
    ```
-   Output perintah tersebut adalah sebagai berikut:
+   The output of this command is as follows:
    ```
    big-zip-files/folder_pmbymkjcya/folder_cawigcwvgv/folder_ltdayfmktr/folder_fnpfclfyee/whzxrpivpqld.txt:information on the record will last a billion years. Genes and brains and books encode picoCTF{gr3p_15_m4g1c_ef8790dc}
    ```

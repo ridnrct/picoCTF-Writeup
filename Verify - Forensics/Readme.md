@@ -1,14 +1,14 @@
 # Verify picoCTF Write-Up
 
-### Menganalisis File yang Diberikan
+### Analyzing the Given File
 
-- **`checksum.txt`** berisi hash:
+- **`checksum.txt`** contains the hash:
 
   ```
   3ad37ed6c5ab81d31e4c94ae611e0adf2e9e3e6bee55804ebc7f386283e366a4
   ```
 
-- **`decrypt.sh`** adalah skrip shell berikut:
+- **`decrypt.sh`** is the following shell script:
 
   ```bash
   #!/bin/bash
@@ -28,26 +28,26 @@
   fi
   ```
 
-  Skrip ini menggunakan OpenSSL untuk mendekripsi file yang dienkripsi dengan algoritma AES-256-CBC. Kata sandinya adalah `picoCTF`.
+  This script uses OpenSSL to decrypt a file encrypted with the AES-256-CBC algorithm. The password is `picoCTF`.
 
-### Mengidentifikasi File yang Tepat
+### Identifying the Correct File
 
-Hash yang terdapat dalam `checksum.txt` adalah SHA-256 dari salah satu file dalam direktori `files/`.
-Untuk menemukan file yang cocok, menghitung hash SHA-256 dari setiap file di direktori tersebut:
+The hash in `checksum.txt` is the SHA-256 of one of the files in the `files/` directory.
+To find the matching file, calculate the SHA-256 hash of each file in that directory:
 
 ```bash
 find files/ -type f -exec sha256sum {} + | grep "3ad37ed6c5ab81d31e4c94ae611e0adf2e9e3e6bee55804ebc7f386283e366a4"
 ```
 
-Hasilnya menunjukkan file yang cocok:
+The result shows the matching file:
 
 ```
 3ad37ed6c5ab81d31e4c94ae611e0adf2e9e3e6bee55804ebc7f386283e366a4  files/e018b574
 ```
 
-### Mendekripsi File
+### Decrypting the File
 
-Dekripsi file yang ditemukan menggunakan skrip `decrypt.sh` yang sudah diberikan:
+Decrypt the found file using the provided `decrypt.sh` script:
 
 ```bash
 ./decrypt.sh files/e018b574

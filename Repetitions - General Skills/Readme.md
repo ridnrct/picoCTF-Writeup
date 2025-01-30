@@ -1,20 +1,20 @@
 # Repetitions picoCTF Write-Up
 
-## Deskripsi Tantangan
-Tantangan ini melibatkan sebuah file bernama `enc_flag` yang berisi string terenkripsi dalam format Base64. Tujuan dari tantangan adalah mendekode string tersebut sebanyak enam kali hingga akhirnya mendapatkan flag dalam format `picoCTF{}`.
+## Challenge Description
+This challenge involves a file named `enc_flag` that contains an encrypted string in Base64 format. The goal of the challenge is to decode the string six times until finally obtaining the flag in the format `picoCTF{}`.
 
-File `enc_flag` berisi string berikut:
+The `enc_flag` file contains the following string:
 ```
 VmpGU1EyRXlUWGxTYmxKVVYwZFNWbGxyV21GV1JteDBUbFpPYWxKdFVsaFpWVlUxWVZaS1ZWWnVhRmRXZWtab1dWWmtSMk5yTlZWWApiVVpUVm10d1VWZFdVa2RpYlZaWFZtNVdVZ3BpU0VKeldWUkNkMlZXVlhoWGJYQk9VbFJXU0ZkcVRuTldaM0JZVWpGS2VWWkdaSGRXCk1sWnpWV3hhVm1KRk5XOVVWVkpEVGxaYVdFMVhSbHBWV0VKVVZGWmFWMDVHV2tkYVNHUlZDazFyY0ZkVWJGWlhZVlpLU0dWRlZsaGkKYlRrelZERldUMkpzUWxWTlJYTkxDZz09Cg==
 ```
 
-## Langkah Penyelesaian
+## Solution Steps
 
-1. **Baca File**
-   Salin isi file `enc_flag` yang berisi string terenkripsi. Pastikan bahwa string tersebut adalah Base64.
+1. **Read File**
+   Copy the contents of the `enc_flag` file which contains the encrypted string. Ensure that the string is in Base64.
 
-2. **Dekode Base64**
-   Gunakan alat atau skrip untuk mendekode string Base64 sebanyak enam kali. Menggunakan Python, command line tools, atau alat online(https://www.base64decode.net/). Berikut adalah langkah-langkah dengan Python:
+2. **Decode Base64**
+   Use a tool or script to decode the Base64 string six times. Using Python, command line tools, or online tools (https://www.base64decode.net/). Here are the steps with Python:
 
    ```python
    import base64
@@ -26,13 +26,14 @@ VmpGU1EyRXlUWGxTYmxKVVYwZFNWbGxyV21GV1JteDBUbFpPYWxKdFVsaFpWVlUxWVZaS1ZWWnVhRmRX
 
    print(f"Decoded Flag: {encoded_flag}")
    ```
-## Penjelasan Kode Python
-- **`base64.b64decode`**: Fungsi untuk mendekode string Base64.
-- **`range(6)`**: Mengulangi proses dekode sebanyak enam kali.
-- **`decode('utf-8')`**: Mengubah hasil dekode dari byte ke string.
 
-3. **Hasil**
-   Setelah menjalankan dekode sebanyak enam kali, akan mendapatkan flag:
+## Python Code Explanation
+- **`base64.b64decode`**: Function to decode a Base64 string.
+- **`range(6)`**: Repeats the decode process six times.
+- **`decode('utf-8')`**: Converts the decoded result from bytes to string.
+
+3. **Result**
+   After running the decode process six times, you will get the flag:
    ```
    picoCTF{base64_n3st3d_dic0d!n8_d0wnl04d3d_de523f49}
    ```
